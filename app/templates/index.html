@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>리뷰 노트</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>📘 책/영화 리뷰 노트</h1>
+
+        <p style="text-align:center; font-size:18px; margin-bottom:20px;">
+            ⭐ 평균 별점:
+            <span style="color:#fbbf24; font-weight:bold;">
+                {{ "⭐" * avg_rating|round(0, 'floor') }}
+            </span>
+        </p>
+
+        <div style="text-align:center; margin-bottom:20px;">
+            <a href="{{ url_for('reviews.new_review') }}" class="btn btn-blue">+ 새 리뷰 작성</a>
+        </div>
+
+        {% if reviews %}
+            {% for r in reviews %}
+            <div class="card">
+                <h2 style="font-size:20px; font-weight:bold;">{{ r.title }}</h2>
+                <p style="margin:10px 0;">{{ r.content }}</p>
+                <p>⭐ {{ "⭐" * r.rating }}</p>
+                <div style="margin-top:10px;">
+                    <a href="{{ url_for('reviews.edit_review', review_id=r.id) }}" class="btn btn-green">✏ 수정</a>
+                    <form action="{{ url_for('reviews.delete_review_route', review_id=r.id) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-red">🗑 삭제</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align:center; color:#6b7280;">아직 리뷰가 없습니다. 첫 리뷰를 작성해보세요!</p>
+        {% endif %}
+    </div>
 </body>
 </html>
