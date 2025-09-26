@@ -1,0 +1,132 @@
+/********************* 기본 스타일 ********************************/
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f8f5f0; /* 도서관/영화관 느낌 */
+  margin: 0;
+  padding: 0;
+  color: #333; /* 기본 글씨 */
+}
+
+/************************* 컨테이너 ********************************/
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/************************** 제목 **********************************/
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: #1e3a8a; /* 네이비 포인트 */
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+/**************************** 카드 ********************************/
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #e0ded9;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/****************************** 버튼 ********************************/
+.btn {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.1s;
+}
+.btn:hover {
+  transform: scale(1.03);
+}
+
+/* 작성/등록 버튼 */
+.btn-gold {
+  background: #f59e0b; /* 골드 */
+  color: white;
+}
+.btn-gold:hover {
+  background: #d97706;
+}
+
+/* 수정 버튼 */
+.btn-green {
+  background: #16a34a; /* 그린 */
+  color: white;
+}
+.btn-green:hover {
+  background: #15803d;
+}
+
+/* 삭제 버튼 */
+.btn-red {
+  background: #b91c1c; /* 버건디 느낌 */
+  color: white;
+  width: 110px;
+}
+.btn-red:hover {
+  background: #7f1d1d;
+}
+
+/***************************** 입력폼 ********************************/
+form {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #1e3a8a;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d4cfc5;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  background-color: #fafaf9;
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #f59e0b; /* 골드 강조 */
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+form button {
+  width: 100%;
+  background: #f59e0b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+form button:hover {
+  background: #d97706;
+}
+
+/***************************** 별점 표시 ********************************/
+.star-rating {
+  color: #f59e0b; /* 별점 골드 */
+  font-size: 18px;
+}
